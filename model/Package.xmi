@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<DCD:Package xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DCD="platform:/resource/TP4_Project/metaModel/DCD.ecore" nom="Package">
+<elements xsi:type="DCD:Classe" nom="Client">
+    <attributs nom="code" isID="true" minoccurs="1" type="//@elements.2"/>
+    <attributs nom="nom" minoccurs="1" type="//@elements.3"/>
+    <attributs nom="contacts" maxoccurs="-1" type="//@elements.1"/>
+  </elements>
+  <elements xsi:type="DCD:Classe" nom="Contact">
+    <attributs nom="num" isID="true" minoccurs="1" type="//@elements.2"/>
+    <attributs nom="adresse" minoccurs="1" type="//@elements.3"/>
+    <attributs nom="tel" type="//@elements.3"/>
+    <attributs nom="client" minoccurs="1" type="//@elements.0"/>
+  </elements>
+  <elements xsi:type="DCD:DataType" nom="int"/>
+  <elements xsi:type="DCD:DataType" nom="String"/>
+</DCD:Package>

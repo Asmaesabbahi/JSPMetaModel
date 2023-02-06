@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jsp="platform:/resource/TP4_Project/metaModel/JSP.ecore">
+  <jsp:JSPPage titre="Client" type="pages">
+    <elements xsi:type="jsp:JSPDeclaration" value="java.util.List"/>
+    <elements xsi:type="jsp:JSPDeclaration" value="ma.fstm.ilisi.gestioncontacts.model.bo.Client"/>
+    <elements xsi:type="jsp:JSPScriptllet" value="List&lt;Client> clients = (List&lt;Client>) request.getAttribute(&quot;clients&quot;);"/>
+    <elements xsi:type="jsp:HTMLTag" nom="a">
+      <children xsi:type="jsp:Text" value="Add Client"/>
+      <attributes nom="href" value="/2"/>
+      <attributes nom="class" value="/1"/>
+    </elements>
+    <elements xsi:type="jsp:HTMLTag" nom="table">
+      <children xsi:type="jsp:HTMLTag" nom="thead">
+        <children xsi:type="jsp:HTMLTag" nom="tr">
+          <children xsi:type="jsp:HTMLTag" nom="th">
+            <children xsi:type="jsp:Text" value="code"/>
+          </children>
+          <children xsi:type="jsp:HTMLTag" nom="th">
+            <children xsi:type="jsp:Text" value="nom"/>
+          </children>
+          <children xsi:type="jsp:HTMLTag" nom="th">
+            <children xsi:type="jsp:Text" value="Contacts"/>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="jsp:HTMLTag" nom="tbody">
+        <children xsi:type="jsp:JSPScriptllet" value="for (Client client : clients  ) {" endingValue="}">
+          <children xsi:type="jsp:HTMLTag" nom="tr">
+            <children xsi:type="jsp:HTMLTag" nom="td">
+              <children xsi:type="jsp:JSPExpression" value="client.code"/>
+            </children>
+            <children xsi:type="jsp:HTMLTag" nom="td">
+              <children xsi:type="jsp:JSPExpression" value="client.nom"/>
+            </children>
+            <children xsi:type="jsp:HTMLTag" nom="td">
+              <children xsi:type="jsp:HTMLTag" nom="a">
+                <children xsi:type="jsp:Text" value="show Contacts"/>
+                <attributes nom="href" value="/8"/>
+              </children>
+            </children>
+          </children>
+        </children>
+      </children>
+      <attributes nom="class" value="/3"/>
+    </elements>
+  </jsp:JSPPage>
+  <jsp:Text value="btn btn-secondary"/>
+  <jsp:JSPExpression value=" &quot;./AddClient&quot;"/>
+  <jsp:Text value="table table-hover"/>
+  <jsp:JSPPage titre="Contact" type="pages">
+    <elements xsi:type="jsp:JSPDeclaration" value="java.util.List"/>
+    <elements xsi:type="jsp:JSPDeclaration" value="ma.fstm.ilisi.gestioncontacts.model.bo.Contact"/>
+    <elements xsi:type="jsp:JSPScriptllet" value="List&lt;Contact> contacts = (List&lt;Contact>) request.getAttribute(&quot;contacts&quot;);"/>
+    <elements xsi:type="jsp:HTMLTag" nom="a">
+      <children xsi:type="jsp:Text" value="Add Contact"/>
+      <attributes nom="href" value="/6"/>
+      <attributes nom="class" value="/5"/>
+    </elements>
+    <elements xsi:type="jsp:HTMLTag" nom="table">
+      <children xsi:type="jsp:HTMLTag" nom="thead">
+        <children xsi:type="jsp:HTMLTag" nom="tr">
+          <children xsi:type="jsp:HTMLTag" nom="th">
+            <children xsi:type="jsp:Text" value="num"/>
+          </children>
+          <children xsi:type="jsp:HTMLTag" nom="th">
+            <children xsi:type="jsp:Text" value="adresse"/>
+          </children>
+          <children xsi:type="jsp:HTMLTag" nom="th">
+            <children xsi:type="jsp:Text" value="tel"/>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="jsp:HTMLTag" nom="tbody">
+        <children xsi:type="jsp:JSPScriptllet" value="for (Contact contact : contacts  ) {" endingValue="}">
+          <children xsi:type="jsp:HTMLTag" nom="tr">
+            <children xsi:type="jsp:HTMLTag" nom="td">
+              <children xsi:type="jsp:JSPExpression" value="contact.num"/>
+            </children>
+            <children xsi:type="jsp:HTMLTag" nom="td">
+              <children xsi:type="jsp:JSPExpression" value="contact.adresse"/>
+            </children>
+            <children xsi:type="jsp:HTMLTag" nom="td">
+              <children xsi:type="jsp:JSPExpression" value="contact.tel"/>
+            </children>
+          </children>
+        </children>
+      </children>
+      <attributes nom="class" value="/7"/>
+    </elements>
+  </jsp:JSPPage>
+  <jsp:Text value="btn btn-secondary"/>
+  <jsp:JSPExpression value=" &quot;./AddContact&quot;"/>
+  <jsp:Text value="table table-hover"/>
+  <jsp:JSPExpression value=" &quot;./ShowContacts?client=&quot;+client.code"/>
+</xmi:XMI>

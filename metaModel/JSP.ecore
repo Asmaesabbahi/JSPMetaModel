@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="jsp"
+    nsURI="platform:/resource/TP4_Project/metaModel/JSP.ecore" nsPrefix="jsp">
+  <eClassifiers xsi:type="ecore:EClass" name="JSPPage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//JSPElement" containment="true" eOpposite="#//JSPElement/page"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="titre" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JSPElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="page" lowerBound="1" eType="#//JSPPage"
+        eOpposite="#//JSPPage/elements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//JSPElement" containment="true" eOpposite="#//JSPElement/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//JSPElement"
+        eOpposite="#//JSPElement/children"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JSPTag" eSuperTypes="#//JSPElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JSPScriptllet" eSuperTypes="#//JSPTag">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endingValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tag" lowerBound="1" eType="#//HTMLTag"
+        eOpposite="#//HTMLTag/attributes"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//JSPExpression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HTMLTag" eSuperTypes="#//JSPElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//Attribute" containment="true" eOpposite="#//Attribute/tag"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JSPExpression" eSuperTypes="#//JSPTag"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#//JSPExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="JSPDeclaration" eSuperTypes="#//JSPTag"/>
+</ecore:EPackage>

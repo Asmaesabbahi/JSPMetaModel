@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<MCD:Schema xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MCD="platform:/resource/TP4_Project/metaModel/MCD.ecore" nom="Package">
+  <tables nom="Client">
+    <colonnes xsi:type="MCD:PK" nom="code" type="int"/>
+    <colonnes nom="nom" type="varchar(30)"/>
+  </tables>
+  <tables nom="Contact">
+    <colonnes xsi:type="MCD:PK" nom="num" type="int"/>
+    <colonnes nom="adresse" type="varchar(30)"/>
+    <colonnes nom="tel" type="varchar(30)"/>
+    <colonnes xsi:type="MCD:FK" nom="code" type="int" reference="//@tables.0"/>
+  </tables>
+</MCD:Schema>

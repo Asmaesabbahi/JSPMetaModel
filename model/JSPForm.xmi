@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jsp="platform:/resource/TP4_Project/metaModel/JSP.ecore">
+  <jsp:JSPPage titre="Client" type="forms">
+    <elements xsi:type="jsp:HTMLTag" nom="form">
+      <children xsi:type="jsp:HTMLTag" nom="div">
+        <children xsi:type="jsp:HTMLTag" nom="label">
+          <children xsi:type="jsp:Text" value="nom"/>
+          <attributes nom="class" value="/14"/>
+          <attributes nom="for" value="/15"/>
+        </children>
+        <children xsi:type="jsp:HTMLTag" nom="div">
+          <children xsi:type="jsp:HTMLTag" nom="input">
+            <attributes nom="name" value="/17"/>
+            <attributes nom="placeholder" value="/19"/>
+            <attributes nom="type" value="/20"/>
+          </children>
+          <attributes nom="class" value="/16"/>
+        </children>
+        <attributes nom="class" value="/13"/>
+        <attributes nom="class" value="/18"/>
+      </children>
+      <children xsi:type="jsp:HTMLTag" nom="input"/>
+      <attributes nom="method" value="/1"/>
+      <attributes nom="action" value="/2"/>
+    </elements>
+  </jsp:JSPPage>
+  <jsp:Text value="POST"/>
+  <jsp:Text value="./AddClient"/>
+  <jsp:JSPPage titre="Contact" type="forms">
+    <elements xsi:type="jsp:HTMLTag" nom="form">
+      <children xsi:type="jsp:HTMLTag" nom="div">
+        <children xsi:type="jsp:HTMLTag" nom="label">
+          <children xsi:type="jsp:Text" value="code"/>
+          <attributes nom="class" value="/7"/>
+          <attributes nom="for" value="/8"/>
+        </children>
+        <children xsi:type="jsp:HTMLTag" nom="div">
+          <children xsi:type="jsp:HTMLTag" nom="select">
+            <children xsi:type="jsp:JSPScriptllet" value="for (Client client : clients  ) {" endingValue="}">
+              <children xsi:type="jsp:HTMLTag" nom="option">
+                <children xsi:type="jsp:JSPExpression" value="client.nom"/>
+                <attributes nom="value" value="/12"/>
+              </children>
+            </children>
+            <attributes nom="name" value="/10"/>
+            <attributes nom="class" value="/11"/>
+          </children>
+          <attributes nom="class" value="/9"/>
+        </children>
+        <attributes nom="class" value="/6"/>
+      </children>
+      <children xsi:type="jsp:HTMLTag" nom="div">
+        <children xsi:type="jsp:HTMLTag" nom="label">
+          <children xsi:type="jsp:Text" value="adresse"/>
+          <attributes nom="class" value="/22"/>
+          <attributes nom="for" value="/23"/>
+        </children>
+        <children xsi:type="jsp:HTMLTag" nom="div">
+          <children xsi:type="jsp:HTMLTag" nom="input">
+            <attributes nom="name" value="/25"/>
+            <attributes nom="placeholder" value="/27"/>
+            <attributes nom="type" value="/28"/>
+          </children>
+          <attributes nom="class" value="/24"/>
+        </children>
+        <attributes nom="class" value="/21"/>
+        <attributes nom="class" value="/26"/>
+      </children>
+      <children xsi:type="jsp:HTMLTag" nom="input"/>
+      <children xsi:type="jsp:HTMLTag" nom="div">
+        <children xsi:type="jsp:HTMLTag" nom="label">
+          <children xsi:type="jsp:Text" value="tel"/>
+          <attributes nom="class" value="/30"/>
+          <attributes nom="for" value="/31"/>
+        </children>
+        <children xsi:type="jsp:HTMLTag" nom="div">
+          <children xsi:type="jsp:HTMLTag" nom="input">
+            <attributes nom="name" value="/33"/>
+            <attributes nom="placeholder" value="/35"/>
+            <attributes nom="type" value="/36"/>
+          </children>
+          <attributes nom="class" value="/32"/>
+        </children>
+        <attributes nom="class" value="/29"/>
+        <attributes nom="class" value="/34"/>
+      </children>
+      <children xsi:type="jsp:HTMLTag" nom="input"/>
+      <attributes nom="method" value="/4"/>
+      <attributes nom="action" value="/5"/>
+    </elements>
+    <elements xsi:type="jsp:JSPDeclaration" value="ma.fstm.ilisi.gestioncontacts.model.bo.Client"/>
+    <elements xsi:type="jsp:JSPDeclaration" value="java.util.List"/>
+    <elements xsi:type="jsp:JSPScriptllet" value="List&lt;Client> clients = (List&lt;Client>) request.getAttribute(&quot;clients&quot;);"/>
+  </jsp:JSPPage>
+  <jsp:Text value="POST"/>
+  <jsp:Text value="./AddContact"/>
+  <jsp:Text value="form-group row"/>
+  <jsp:Text value="col-sm-2 col-form-label"/>
+  <jsp:Text value="code"/>
+  <jsp:Text value="col-sm-7"/>
+  <jsp:Text value="code"/>
+  <jsp:Text value="form-select"/>
+  <jsp:JSPExpression value="client.code"/>
+  <jsp:Text value="form-group row"/>
+  <jsp:Text value="col-sm-2 col-form-label"/>
+  <jsp:Text value="nom"/>
+  <jsp:Text value="col-sm-7"/>
+  <jsp:Text value="nom"/>
+  <jsp:Text value="form-control"/>
+  <jsp:Text value="Entrer votre nom"/>
+  <jsp:Text value="text"/>
+  <jsp:Text value="form-group row"/>
+  <jsp:Text value="col-sm-2 col-form-label"/>
+  <jsp:Text value="adresse"/>
+  <jsp:Text value="col-sm-7"/>
+  <jsp:Text value="adresse"/>
+  <jsp:Text value="form-control"/>
+  <jsp:Text value="Entrer votre adresse"/>
+  <jsp:Text value="text"/>
+  <jsp:Text value="form-group row"/>
+  <jsp:Text value="col-sm-2 col-form-label"/>
+  <jsp:Text value="tel"/>
+  <jsp:Text value="col-sm-7"/>
+  <jsp:Text value="tel"/>
+  <jsp:Text value="form-control"/>
+  <jsp:Text value="Entrer votre tel"/>
+  <jsp:Text value="text"/>
+</xmi:XMI>
